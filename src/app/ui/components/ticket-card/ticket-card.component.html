@@ -1,0 +1,31 @@
+<div class="ticket-card">
+  <h2>Service Ticket: {{ ticket.CallID }}</h2>
+
+  <div class="section">
+    <strong>Customer:</strong> {{ ticket['Customer Name'] }}<br />
+    <strong>Contact:</strong> {{ ticket.ContactNumber }} / {{ ticket.CustomerEmailID }}<br />
+    <strong>Address:</strong> {{ ticket.Address }}, {{ ticket.City }}
+  </div>
+
+  <div class="section">
+    <strong>Device:</strong> {{ ticket.ModelNo }} (SN: {{ ticket.SerialNo }})<br />
+    <strong>Status:</strong>
+    <span [ngClass]="ticket.Status">{{ ticket.Status }}</span><br />
+    <strong>Problem:</strong> {{ ticket.ProblemType }}<br />
+    <strong>Warranty:</strong>
+    <span [ngClass]="isUnderWarranty ? 'warranty-valid' : 'warranty-invalid'">
+      {{ ticket.WarrantyType }}
+    </span>
+  </div>
+
+  <div class="section">
+    <strong>Created On:</strong> {{ formattedDate }}<br />
+    <strong>RMA Status:</strong> {{ ticket['RMA Status'] }} ({{ ticket['RMA Date'] }})<br />
+    <strong>Dispatch:</strong> {{ ticket.Dispatch || 'Pending' }}
+  </div>
+
+  <div *ngIf="ticket['Tracking ID']" class="section">
+    <strong>Courier:</strong> {{ ticket['Courier Name'] }}<br />
+    <strong>Tracking ID:</strong> {{ ticket['Tracking ID'] }}
+  </div>
+</div>

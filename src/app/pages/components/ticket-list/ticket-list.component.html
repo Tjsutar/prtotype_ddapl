@@ -1,0 +1,17 @@
+<div *ngFor="let ticket of tickets" class="border p-4 rounded bg-white shadow mb-4">
+  <!-- Top Section: Customer Info -->
+  <div class="mb-3">
+    <p><strong>Address:</strong> {{ ticket.Address }}</p>
+    <p><strong>Store Location:</strong> {{ ticket.Storelocation }}</p>
+    <p><strong>Email:</strong> {{ ticket.CustomerEmailID }}</p>
+  </div>
+
+  <!-- Bottom Section: Model Numbers and Issues -->
+  <div class="bg-gray-50 p-3 rounded border">
+    <p><strong>Model Number:</strong> {{ ticket.ModelNo }}</p>
+    <p><strong>Serial Number:</strong> {{ ticket.SerialNo }}</p>
+    <p><strong>Issue:</strong> {{ ticket.ProblemType }}</p>
+    <p><strong>Status:</strong> {{ ticket.Status }}</p>
+  </div>
+</div>
+
