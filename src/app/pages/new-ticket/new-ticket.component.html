@@ -1,48 +1,30 @@
-<div class="bg-slate-100 max-h-min flex-1 flex items-center justify-center py-8">
-  <div
-    class="w-full min-h-max max-w-5xl bg-white px-8 py-6 rounded-xl shadow-lg"
-  >
+<div class="theme-bg max-h-min flex-1 flex items-center justify-center py-8">
+  <div class="w-full min-h-max max-w-5xl theme-card px-8 py-6 rounded-xl shadow-lg">
     <div class="flex flex-wrap items-center justify-between gap-4 mb-2">
       <!-- Toggle Button -->
       <button
         (click)="toggleDetails()"
-        class="w-40 text-sm bg-blue-100 text-blue-700 px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
+        class="w-40 text-sm theme-button px-2 py-2 rounded-md transition whitespace-nowrap"
       >
         {{ showDetails ? "Hide POC Details" : "Show POC Details" }}
       </button>
 
       <!-- Title & Subtitle -->
-      <h4 class="text-lg font-bold text-gray-800 mb-3">Raise Ticket</h4>
-      <label class="block text-xm text-gray-700 font-medium"
-        >Please fill out all required fields<span class="text-red-500"
-          >*</span
-        ></label
-      >
+      <h4 class="text-lg font-bold theme-text mb-3">Raise New Ticket</h4>
+      <label class="block text-sm theme-text-secondary font-medium">
+        Please fill out all required fields<span class="text-red-500"> *</span>
+      </label>
     </div>
 
     <!-- Ticket Form -->
     <form class="space-y-6">
       <div class="flex flex-col lg:flex-row gap-3">
         <!-- Left Column - Point of Contact Section -->
-        <div
-          class="bg-blue-100 shadow-lg p-4 rounded-lg flex-1"
-          *ngIf="showDetails"
-        >
+        <div class="theme-card-secondary shadow-lg p-4 rounded-lg flex-1" *ngIf="showDetails">
           <div class="flex justify-between items-center">
-            <h3
-              class="text-lg font-semibold text-blue-800 mb-1 flex items-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-2"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                  clip-rule="evenodd"
-                />
+            <h3 class="text-lg font-semibold theme-text mb-1 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
               </svg>
               Point of Contact Information
             </h3>
@@ -51,195 +33,116 @@
           <div class="space-y-3">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-medium text-gray-700 mb-1"
-                  >Company Name <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="text"
-                  required
-                  placeholder="Company name"
-                  class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                />
+                <label class="block text-xs font-medium theme-text-secondary mb-1">Company Name <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="Company name" class="w-full text-sm p-2 rounded-md theme-input" />
               </div>
               <div>
-                <label class="block text-xs font-medium text-gray-700 mb-1"
-                  >Contact Person <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="text"
-                  required
-                  placeholder="Contact name"
-                  class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                />
+                <label class="block text-xs font-medium theme-text-secondary mb-1">Contact Person <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="Contact name" class="w-full text-sm p-2 rounded-md theme-input" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-medium text-gray-700 mb-1"
-                  >Email <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="email"
-                  required
-                  placeholder="email@example.com"
-                  class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                />
+                <label class="block text-xs font-medium theme-text-secondary mb-1">Email <span class="text-red-500">*</span></label>
+                <input type="email" required placeholder="email@example.com" class="w-full text-sm p-2 rounded-md theme-input" />
               </div>
               <div>
-                <label class="block text-xs font-medium text-gray-700 mb-1"
-                  >Phone <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="tel"
-                  required
-                  placeholder="+1 (___) ___-____"
-                  class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                />
+                <label class="block text-xs font-medium theme-text-secondary mb-1">Phone <span class="text-red-500">*</span></label>
+                <input type="tel" required placeholder="+1 (___) ___-____" class="w-full text-sm p-2 rounded-md theme-input" />
               </div>
             </div>
 
             <div>
-              <label class="block text-xs font-medium text-gray-700 mb-1"
-                >Address <span class="text-red-500">*</span></label
-              >
-
-              <textarea
-                rows="2"
-                required
-                class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                placeholder="Street address, city, state, zip code"
-              ></textarea>
+              <label class="block text-xs font-medium theme-text-secondary mb-1">Address <span class="text-red-500">*</span></label>
+              <textarea rows="2" required class="w-full text-sm p-2 rounded-md theme-input" placeholder="Street address, city, state, zip code"></textarea>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-medium text-gray-700 mb-1"
-                  >City <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="text"
-                  required
-                  placeholder="City"
-                  class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                />
+                <label class="block text-xs font-medium theme-text-secondary mb-1">City <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="City" class="w-full text-sm p-2 rounded-md theme-input" />
               </div>
               <div>
-                <label class="block text-xs font-medium text-gray-700 mb-1"
-                  >Store Location <span class="text-red-500">*</span></label
-                >
-                <input
-                  type="text"
-                  required
-                  placeholder="Store # or location"
-                  class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-                />
+                <label class="block text-xs font-medium theme-text-secondary mb-1">Store Location <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="Store # or location" class="w-full text-sm p-2 rounded-md theme-input" />
               </div>
             </div>
           </div>
         </div>
+
         <!-- Right Column - Device Details Section -->
-<div class="bg-gray-200 shadow-lg p-4 rounded-lg flex-1 flex flex-col">
-  <div class="flex-1"> <!-- This wraps all content except the button -->
-    <h3 class="text-lg font-semibold text-gray-800 mb-1 flex items-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M11.17 3a1 1 0 01.98.8l1 5a1 1 0 01-.17.9l-5 6a1 1 0 01-1.52.06l-4-4a1 1 0 010-1.42l4-4a1 1 0 011.27-.06l1.1.94H15a1 1 0 010 2H9.44l-.3.25-2.56 2.56 2.56 2.56.3.25H15a1 1 0 010 2H5a1 1 0 01-1-1V4a1 1 0 011-1h6.17z" clip-rule="evenodd" />
-      </svg>
-      Device Details
-    </h3>
+        <div class="theme-card-secondary shadow-lg p-4 rounded-lg flex-1 flex flex-col">
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold theme-text mb-1 flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M11.17 3a1 1 0 01.98.8l1 5a1 1 0 01-.17.9l-5 6a1 1 0 01-1.52.06l-4-4a1 1 0 010-1.42l4-4a1 1 0 011.27-.06l1.1.94H15a1 1 0 010 2H9.44l-.3.25-2.56 2.56 2.56 2.56.3.25H15a1 1 0 010 2H5a1 1 0 01-1-1V4a1 1 0 011-1h6.17z" clip-rule="evenodd" />
+              </svg>
+              Device Details
+            </h3>
 
-    <div class="space-y-3">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div>
-          <label class="block text-xs font-medium text-gray-700 mb-1">Model Number <span class="text-red-500">*</span></label>
-          <input
-            type="text"
-            required
-            placeholder="Model #"
-            class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-          />
-        </div>
-        <div>
-          <label class="block text-xs font-medium text-gray-700 mb-1">Serial Number <span class="text-red-500">*</span></label>
-          <input
-            type="text"
-            required
-            placeholder="Serial #"
-            class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-          />
-        </div>
-      </div>
+            <div class="space-y-3">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium theme-text-secondary mb-1">Model Number <span class="text-red-500">*</span></label>
+                  <input type="text" required placeholder="Model #" class="w-full text-sm p-2 rounded-md theme-input" />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium theme-text-secondary mb-1">Serial Number <span class="text-red-500">*</span></label>
+                  <input type="text" required placeholder="Serial #" class="w-full text-sm p-2 rounded-md theme-input" />
+                </div>
+              </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div>
-          <label class="block text-xs font-medium text-gray-700 mb-1">Problem Type <span class="text-red-500">*</span></label>
-          <select
-            required
-            class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-          >
-            <option disabled selected>Select problem type</option>
-            <option>Display</option>
-            <option>Network</option>
-            <option>Software</option>
-            <option>Hardware</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-xs font-medium text-gray-700 mb-1">Hardware Type <span class="text-red-500">*</span></label>
-          <select
-            required
-            class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-          >
-            <option disabled selected>Select hardware type</option>
-            <option>CPU</option>
-            <option>Printer</option>
-            <option>Scanner</option>
-            <option>POS Terminal</option>
-            <option>Other</option>
-          </select>
-        </div>
-      </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium theme-text-secondary mb-1">Problem Type <span class="text-red-500">*</span></label>
+                  <select required class="w-full text-sm p-2 rounded-md theme-input">
+                    <option disabled selected>Select problem type</option>
+                    <option>Display</option>
+                    <option>Network</option>
+                    <option>Software</option>
+                    <option>Hardware</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-medium theme-text-secondary mb-1">Hardware Type <span class="text-red-500">*</span></label>
+                  <select required class="w-full text-sm p-2 rounded-md theme-input">
+                    <option disabled selected>Select hardware type</option>
+                    <option>CPU</option>
+                    <option>Printer</option>
+                    <option>Scanner</option>
+                    <option>POS Terminal</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
 
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Problem Description <span class="text-red-500">*</span></label>
-        <input
-          type="text"
-          required
-          placeholder="Describe the problem in detail including any error messages..."
-          class="w-full text-sm border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200 focus:border-transparent"
-        />
-      </div>
+              <div>
+                <label class="block text-sm font-medium theme-text-secondary mb-1">Problem Description <span class="text-red-500">*</span></label>
+                <input type="text" required placeholder="Describe the problem..." class="w-full text-sm p-2 rounded-md theme-input" />
+              </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div>
-          <label class="block text-xs font-medium text-gray-700 mb-1">Upload Image 1</label>
-          <input
-            type="file"
-            class="w-full text-xs text-gray-600 file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-          />
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-medium theme-text-secondary mb-1">Upload Image 1</label>
+                  <input type="file" class="w-full text-xs theme-text-secondary file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-[var(--card-bg-secondary)] file:text-[var(--primary)] hover:file:bg-[var(--primary-hover)]" />
+                </div>
+                <div>
+                  <label class="block text-xs font-medium theme-text-secondary mb-1">Upload Image 2</label>
+                  <input type="file" class="w-full text-xs theme-text-secondary file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-[var(--card-bg-secondary)] file:text-[var(--primary)] hover:file:bg-[var(--primary-hover)]" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="pt-4 mt-auto self-end max-w-md">
+            <button type="submit" class="w-full px-4 py-2 text-sm font-medium theme-button rounded-md transition-colors">
+              Submit Ticket
+            </button>
+          </div>
         </div>
-        <div>
-          <label class="block text-xs font-medium text-gray-700 mb-1">Upload Image 2</label>
-          <input
-            type="file"
-            class="w-full text-xs text-gray-600 file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Submit Button now outside the content wrapper but inside the right column -->
-  <div class="pt-4 mt-auto  self-end max-w-md">
-    <button
-      type="submit"
-      class="w-full px-4 py-2 text-sm bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
-    >
-      Submit Ticket
-    </button>
-  </div>
-</div>
       </div>
     </form>
   </div>

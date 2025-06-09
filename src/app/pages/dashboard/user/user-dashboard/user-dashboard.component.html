@@ -1,15 +1,128 @@
 <!-- User Dashboard Header -->
-<div class="bg-white shadow p-4 rounded-lg">
-  <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-    <h1 class="text-xl font-bold text-gray-800">User Dashboard</h1>
-    <nav class="flex gap-4 text-sm font-medium text-blue-600">
-      <a routerLink="/user-dashboard" routerLinkActive="text-blue-800 font-semibold">Raise Ticket</a>
-      <a routerLink="/bulk-upload" routerLinkActive="text-blue-800 font-semibold">Bulk Upload</a>
-      <a routerLink="/device-status" routerLinkActive="text-blue-800 font-semibold">Know Device Status</a>
-    </nav>
+<nav class="theme-card shadow-md px-6 py-4 flex w-full justify-between">
+  <!-- Logo / Brand -->
+  <div class="flex items-center space-x-3">
+    <img src="https://ddapltickethub.co.in/img/DDA_website-01.png" alt="Logo" class="h-10 w-28" />
+    <!-- <span class="text-xl font-semibold theme-text">Digital Data</span> -->
   </div>
+
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex  space-x-6 items-center">
+    <li>
+      <a
+        routerLink="/user-dashboard"
+        class="theme-nav-element "
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+        >Dashboard</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/app-new-ticket"
+        class="theme-nav-element "
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: false }"
+      >Raise Ticket</a>
+    </li>
+    <li>
+      <a
+        routerLink="/know-device-status"
+        class="theme-nav-element "
+        routerLinkActive="text-blue-800 font-semibold"
+        >Know Device Status</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/bulk-upload"
+        class="theme-nav-element "
+        routerLinkActive="text-blue-800 font-semibold"
+        >Bulk Upload</a
+      >
+    </li>
+  </ul>
+  <!-- Dark Mode Toggle -->
+  <app-theme-toggle ></app-theme-toggle>
+  <!-- Right: Avatar + Dark Mode Toggle -->
+  <div class="flex items-center space-x-4">
+    <!-- Avatar -->
+    <div class="relative group">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/15181/15181334.png"
+        alt="User"
+        class="w-8 h-8 rounded-full border-2 border-[var(--primary)] cursor-pointer"
+      />
+      <div
+        class="absolute right-0 mt-2 w-40 theme-card shadow-lg rounded-md p-2 z-50 hidden group-hover:block"
+      >
+        <a
+          href="#"
+          class="block px-3 py-1 text-sm rounded hover:bg-[var(--card-bg-secondary)] theme-text"
+          >Profile</a
+        >
+        <a
+          href="#"
+          class="block px-3 py-1 text-sm rounded hover:bg-[var(--card-bg-secondary)] theme-text"
+          >Logout</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Button -->
+  <button
+    class="md:hidden text-gray-600 dark:text-gray-200 focus:outline-none"
+    (click)="mobileMenuOpen = !mobileMenuOpen"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"
+      />
+    </svg>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div
+  *ngIf="mobileMenuOpen"
+  class="md:hidden theme-card px-6 py-4 space-y-2 shadow-md"
+>
+  <a
+    routerLink="/user-dashboard"
+    class="theme-button px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
+    routerLinkActive="font-semibold bg-blue-100 "
+    >Raise Ticket</a
+  >
+  <a
+    routerLink="/bulk-upload"
+    class="theme-button px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
+    routerLinkActive="text-blue-800 font-semibold"
+    >Bulk Upload</a
+  >
+  <a
+    routerLink="/device-status"
+    class="theme-button px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
+    routerLinkActive="text-blue-800 font-semibold"
+    >Know Device Status</a
+  >
+  <button class="w-full text-left theme-button px-3 py-1 rounded-md text-sm">
+    New Ticket
+  </button>
 </div>
+
+<!-- </div> -->
+<!-- </div> -->
 
 <!-- Ticket Form Component -->
 <app-new-ticket></app-new-ticket>
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>

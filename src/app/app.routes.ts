@@ -29,6 +29,14 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/dashboard/user/user-dashboard/user-dashboard.component').then(m => m.UserDashboardComponent),
     canActivate: [roleGuard(['User'])],
+
+    {
+      path: 'new-ticket',
+    children: [
+  {   
+    loadComponent: () =>
+      import('./pages/new-ticket/new-ticket.component').then(m => m.NewTicketComponent),
+  } ]
   },
   {
     path: 'login',
