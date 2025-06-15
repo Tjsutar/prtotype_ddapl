@@ -3,7 +3,7 @@
 // It is designed to be used with a simple role-based access control system.
 // src/app/core/services/auth.service.ts
 import { Injectable } from '@angular/core';
-import { User } from './models/user';
+import { User } from '../../services/models/user';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private currentRole: 'Admin' | 'Manager' | 'User' | null = null;

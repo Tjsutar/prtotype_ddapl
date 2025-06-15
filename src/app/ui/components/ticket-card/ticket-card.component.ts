@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-ticket-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './ticket-card.component.html',
+  template: ``,
   styleUrls: ['./ticket-card.component.scss']
 })
 export class TicketCardComponent {

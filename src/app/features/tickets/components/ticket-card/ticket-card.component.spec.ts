@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ThemeToggleComponent } from './theme-toggle.component';
+import { TicketCardComponent } from './ticket-card.component';
 
-describe('ThemeToggleComponent', () => {
-  let component: ThemeToggleComponent;
-  let fixture: ComponentFixture<ThemeToggleComponent>;
+describe('TicketCardComponent', () => {
+  let component: TicketCardComponent;
+  let fixture: ComponentFixture<TicketCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ThemeToggleComponent]
+      imports: [TicketCardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ThemeToggleComponent);
+    fixture = TestBed.createComponent(TicketCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

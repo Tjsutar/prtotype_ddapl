@@ -1,4 +1,4 @@
-import { Ticket } from './ticket-card.model';
+import { Ticket } from '../../../../features/tickets/models/ticket-card.model';
 
 export const dummyTickets: Ticket[] = [
   {

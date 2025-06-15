@@ -76,8 +76,8 @@
 
 /* Active Nav Link */
 .theme-nav-element.active {
-  background-color: var(--primary);
-  color: white;
+  background-color: var(--card-bg-secondary); /* e.g., var(--primary-hover) if preferred */
+  color: var(--text);
 }
 
 

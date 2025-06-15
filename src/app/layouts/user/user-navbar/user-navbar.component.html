@@ -1,11 +1,13 @@
-<!-- User Dashboard Header -->
+
+<!-- User Navbar Component -->
+<!-- <app-user-navbar></app-user-navbar> -->
 <nav class="theme-card shadow-md px-6 py-4 flex w-full justify-between">
   <!-- Logo / Brand -->
   <div class="flex items-center space-x-3">
     <img src="https://ddapltickethub.co.in/img/DDA_website-01.png" alt="Logo" class="h-10 w-28" />
-    <!-- <span class="text-xl font-semibold theme-text">Digital Data</span> -->
   </div>
 
+<!-- Navigation Links -->
   <!-- Desktop Menu -->
   <ul class="hidden md:flex  space-x-6 items-center">
     <li>
@@ -13,7 +15,6 @@
         routerLink="/user-dashboard"
         class="theme-nav-element "
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: false }"
         >Dashboard</a
       >
     </li>
@@ -22,14 +23,13 @@
         routerLink="/app-new-ticket"
         class="theme-nav-element "
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: false }"
       >Raise Ticket</a>
     </li>
     <li>
       <a
         routerLink="/know-device-status"
         class="theme-nav-element "
-        routerLinkActive="text-blue-800 font-semibold"
+        routerLinkActive="active"
         >Know Device Status</a
       >
     </li>
@@ -37,7 +37,7 @@
       <a
         routerLink="/bulk-upload"
         class="theme-nav-element "
-        routerLinkActive="text-blue-800 font-semibold"
+        routerLinkActive="active"
         >Bulk Upload</a
       >
     </li>
@@ -97,32 +97,32 @@
   *ngIf="mobileMenuOpen"
   class="md:hidden theme-card px-6 py-4 space-y-2 shadow-md"
 >
+      <a
+        routerLink="/user-dashboard"
+        class="theme-nav-element "
+        routerLinkActive="active"
+        >Dashboard</a
+      >
   <a
-    routerLink="/user-dashboard"
+    routerLink="/app-new-ticket"
     class="theme-button px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
-    routerLinkActive="font-semibold bg-blue-100 "
+    routerLinkActive="active"
     >Raise Ticket</a
   >
   <a
     routerLink="/bulk-upload"
     class="theme-button px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
-    routerLinkActive="text-blue-800 font-semibold"
+    routerLinkActive="active"
     >Bulk Upload</a
   >
   <a
     routerLink="/device-status"
     class="theme-button px-2 py-2 rounded-md hover:bg-blue-200 transition whitespace-nowrap"
-    routerLinkActive="text-blue-800 font-semibold"
+    routerLinkActive="active"
     >Know Device Status</a
   >
   <button class="w-full text-left theme-button px-3 py-1 rounded-md text-sm">
     New Ticket
   </button>
 </div>
-
-<!-- </div> -->
-<!-- </div> -->
-
-<!-- Ticket Form Component -->
-<app-new-ticket></app-new-ticket>
 <router-outlet></router-outlet>
